@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CS_PlayerAnimator : MonoBehaviour
 {
-    private const string SPEED = "Speed";
+    private const string IS_WALKING = "IsWalking";
 
     [SerializeField] private CS_Player player;
 
@@ -16,15 +16,7 @@ public class CS_PlayerAnimator : MonoBehaviour
     }
 
     private void Update()
-    {
-        if (player.IsWalking())
-        {
-            animator.SetFloat(SPEED, .5f);
-        }
-        else
-        {
-            animator.SetFloat(SPEED, 0f);
-        }
-        
+    {        
+            animator.SetBool(IS_WALKING, player.IsWalking());              
     }
 }
