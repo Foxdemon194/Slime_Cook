@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class CS_ClearCounter : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Interact()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("interacted");
     }
 }
