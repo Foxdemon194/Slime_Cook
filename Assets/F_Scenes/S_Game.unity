@@ -664,6 +664,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &467938909 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1325578092278539022, guid: ea5438c6d7f4e7c44ae3eab49752bf05,
+    type: 3}
+  m_PrefabInstance: {fileID: 66489154}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ef90fd4d27b7b409c29d00a4dded3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &486483335 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6705402075998324148, guid: d941199d4a58fcb45adc75ea8e37c42c,
@@ -1124,6 +1136,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1325578092278539022, guid: ea5438c6d7f4e7c44ae3eab49752bf05,
         type: 3}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1325578092278539022, guid: ea5438c6d7f4e7c44ae3eab49752bf05,
+        type: 3}
       propertyPath: tomatoPrefab
       value: 
       objectReference: {fileID: 7326560122668615363, guid: 2b1bcda041ca83449bd807df3dc108b4,
@@ -1134,6 +1151,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 659b063c2b311cd46906ccb7788b0726,
         type: 2}
+    - target: {fileID: 1325578092278539022, guid: ea5438c6d7f4e7c44ae3eab49752bf05,
+        type: 3}
+      propertyPath: secondClearCounter
+      value: 
+      objectReference: {fileID: 467938909}
     - target: {fileID: 2352241487365438834, guid: ea5438c6d7f4e7c44ae3eab49752bf05,
         type: 3}
       propertyPath: m_Name
