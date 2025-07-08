@@ -20,7 +20,6 @@ public class CS_ClearCounter : MonoBehaviour
             if(kitchenObject != null)
             {
                 kitchenObject.SetClearCounter(secondClearCounter);
-                Debug.Log(kitchenObject.GetClearCounter());
             }
         }
     }
@@ -30,10 +29,7 @@ public class CS_ClearCounter : MonoBehaviour
         if (kitchenObject == null)
         {        
             Transform kitchenObjectTransform = Instantiate(sOKitchenObject.prefab, CounterTopPoint);
-            kitchenObjectTransform.localPosition = Vector3.zero;
-
-            kitchenObject = kitchenObjectTransform.GetComponent<CS_KitchenObject>();
-            kitchenObject.SetClearCounter(this);
+            kitchenObjectTransform.GetComponent<CS_KitchenObject>().SetClearCounter(this);
         }
         else
         {
@@ -44,5 +40,25 @@ public class CS_ClearCounter : MonoBehaviour
     public Transform GetKitchenObjectFollowTransform()
     {
         return CounterTopPoint;
+    }
+
+    public void SetKitchenObject(CS_KitchenObject kitchenObject)
+    {
+        this.kitchenObject = kitchenObject;
+    }
+
+    public CS_KitchenObject GetKitchenObject()
+    {
+        return kitchenObject;
+    }
+
+    public void ClearKitchenObject()
+    {
+        kitchenObject = null;
+    }
+
+    public bool HasKitchenObject()
+    {
+        return kitchenObject != null;
     }
 }
