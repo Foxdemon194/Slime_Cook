@@ -11,8 +11,10 @@ public class CS_ContainerCounter : CS_BaseCounter
 
     public override void Interact(CS_Player player)
     {
-        if (!HasKitchenObject())
-        {
+
+        if(!player.HasKitchenObject())
+        {        
+            // The player isn't carrying an object
             Transform kitchenObjectTransform = Instantiate(sOKitchenObject.prefab);
             kitchenObjectTransform.GetComponent<CS_KitchenObject>().SetKitchenObjectParent(player);
 

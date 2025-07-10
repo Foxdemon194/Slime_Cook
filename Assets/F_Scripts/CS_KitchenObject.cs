@@ -29,11 +29,19 @@ public class CS_KitchenObject : MonoBehaviour
         kitchenObjectParent.SetKitchenObject(this);
 
         transform.parent = kitchenObjectParent.GetKitchenObjectFollowTransform();
-        transform.localPosition = Vector3.zero;
+        transform.localPosition = Vector3.zero; // If i decide to do the hand off animation through code, i will probably have to relocate this line
     }
 
     public IKitchenObjectParent GetKitchenObjectParent() 
     {
         return kitchenObjectParent;
     }
+
+    // I added this in case I want to implement a toss animation through a IEnumerator
+    /*
+    public IEnumerator CenterObject(float waitTime)
+    {
+        //move the object upwards, towards the location, and flip it and center it once done.
+        yield return new WaitForSeconds(waitTime);
+    }*/
 }

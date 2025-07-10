@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 7882931017329444981}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5540594789110379523
 MonoBehaviour:
@@ -127,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 802656365133722158, guid: e2f8cc71a42a99f448e6b85aac825dec,
         type: 3}
       propertyPath: m_Name
-      value: Tomato Variant
+      value: food
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
