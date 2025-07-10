@@ -12,9 +12,13 @@ public class CS_BaseCounter : MonoBehaviour, IKitchenObjectParent
 
     public virtual void Interact(CS_Player player)
     {
-        Debug.LogError("CS_BaseCounter.Interact()");
+        Debug.LogError("CS_BaseCounter.Interact() was run when it should have been overwriten");
     }
 
+    public virtual void InteractAlternate(CS_Player player)
+    {
+        Debug.LogError("CS_BaseCounter.InteractAlternate() was run when it should have been overwriten");
+    }
 
     public Transform GetKitchenObjectFollowTransform()
     {

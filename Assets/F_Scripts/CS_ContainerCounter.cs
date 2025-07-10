@@ -13,10 +13,9 @@ public class CS_ContainerCounter : CS_BaseCounter
     {
 
         if(!player.HasKitchenObject())
-        {        
+        {
             // The player isn't carrying an object
-            Transform kitchenObjectTransform = Instantiate(sOKitchenObject.prefab);
-            kitchenObjectTransform.GetComponent<CS_KitchenObject>().SetKitchenObjectParent(player);
+            CS_KitchenObject.SpawnKitchenObject(sOKitchenObject, player);
 
             OnPlayerGrabbedObject?.Invoke(this, EventArgs.Empty);
         }

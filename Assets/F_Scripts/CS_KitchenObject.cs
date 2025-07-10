@@ -32,9 +32,26 @@ public class CS_KitchenObject : MonoBehaviour
         transform.localPosition = Vector3.zero; // If i decide to do the hand off animation through code, i will probably have to relocate this line
     }
 
+    public void DestroySelf()
+    {
+        kitchenObjectParent.ClearKitchenObject();
+        Destroy(gameObject);
+    }
+
     public IKitchenObjectParent GetKitchenObjectParent() 
     {
         return kitchenObjectParent;
+    }
+
+    public static CS_KitchenObject SpawnKitchenObject(SO_KitchenObject sO_KitchenObject, IKitchenObjectParent kitchenObjectParent)
+    {
+        Transform kitchenObjectTrasform = Instantiate(sO_KitchenObject.prefab);
+
+        CS_KitchenObject kitchenObject = kitchenObjectTrasform.GetComponent<CS_KitchenObject>();
+
+        kitchenObject.SetKitchenObjectParent(kitchenObjectParent);
+
+        return kitchenObject;
     }
 
     // I added this in case I want to implement a toss animation through a IEnumerator

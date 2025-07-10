@@ -6,6 +6,8 @@ using System;
 public class CS_GameInput : MonoBehaviour
 {
     public event EventHandler OnInteractAction;
+    public event EventHandler OnInteractAlternateAction;
+
     private IA_Player iAPlayer;
 
     private void Awake()
@@ -14,6 +16,12 @@ public class CS_GameInput : MonoBehaviour
         iAPlayer.Player.Enable();
 
         iAPlayer.Player.Interact.performed += Interact_performed;
+        iAPlayer.Player.InteractAlternate.performed += InteractAlternate_performed;
+    }
+
+    private void InteractAlternate_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnInteractAlternateAction?.Invoke(this, EventArgs.Empty);
     }
 
     private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
