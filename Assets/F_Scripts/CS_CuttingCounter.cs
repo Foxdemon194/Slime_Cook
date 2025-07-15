@@ -7,6 +7,8 @@ public class CS_CuttingCounter : CS_BaseCounter
 {
     [SerializeField] private SO_CuttingRecipe[] SO_CuttingRecipeArray;
 
+    private int cuttingProgress;
+
     public override void Interact(CS_Player player)
     {
         if (!HasKitchenObject())
@@ -20,6 +22,7 @@ public class CS_CuttingCounter : CS_BaseCounter
                 {
                     //Player is carrying something that can be cut
                     player.GetKitchenObject().SetKitchenObjectParent(this);
+                    cuttingProgress = 0;
                 }
             }
             else
@@ -49,35 +52,48 @@ public class CS_CuttingCounter : CS_BaseCounter
     {
         if(HasKitchenObject() && HasRecipeWithInput(GetKitchenObject().GetSO_KitchenObject()))
         {
-            //There is an object here and it can be cut
-            SO_KitchenObject sO_OutputKitchenObject = GetOutputForInput(GetKitchenObject().GetSO_KitchenObject());
+            cuttingProgress++;
+            SO_CuttingRecipe sOCuttingRecipe = GetSO_CuttingRecipeWithInput(GetKitchenObject().GetSO_KitchenObject());
+            if (cuttingProgress >= sOCuttingRecipe.cuttingProgressMax)
+            {
+                //There is an object here and it can be cut
+                SO_KitchenObject sO_OutputKitchenObject = GetOutputForInput(GetKitchenObject().GetSO_KitchenObject());
 
-            GetKitchenObject().DestroySelf();
+                GetKitchenObject().DestroySelf();
 
-            CS_KitchenObject.SpawnKitchenObject(sO_OutputKitchenObject, this);
+                CS_KitchenObject.SpawnKitchenObject(sO_OutputKitchenObject, this);
+            }
         }
     }
 
     private bool HasRecipeWithInput(SO_KitchenObject sO_InputKitchenObject)
     {
-        foreach(SO_CuttingRecipe sO_CuttingRecipe in SO_CuttingRecipeArray)
-        {
-            if(sO_CuttingRecipe.input == sO_InputKitchenObject)
-            {
-                return true;
-            }
-        }
-        return false;
+        SO_CuttingRecipe sO_CuttingRecipe = GetSO_CuttingRecipeWithInput(sO_InputKitchenObject);
+        return sO_CuttingRecipe != null;
+        
     }
 
     private SO_KitchenObject GetOutputForInput(SO_KitchenObject sO_inputKitchenObject)
     {
+        SO_CuttingRecipe sO_CuttingRecipe = GetSO_CuttingRecipeWithInput(sO_inputKitchenObject);
+        if (sO_CuttingRecipe != null)
+        {
+            return sO_CuttingRecipe.output;
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    private SO_CuttingRecipe GetSO_CuttingRecipeWithInput(SO_KitchenObject sO_inputKitchenObject)
+    {
         foreach(SO_CuttingRecipe sO_CuttingRecipe in SO_CuttingRecipeArray)
         {
-            if(sO_CuttingRecipe.input == sO_inputKitchenObject )
+            if(sO_CuttingRecipe.input == sO_inputKitchenObject)
             {
-                return sO_CuttingRecipe.output;
-            }
+                return sO_CuttingRecipe;
+            }            
         }
         return null;
     }
