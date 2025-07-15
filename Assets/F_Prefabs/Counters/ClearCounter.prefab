@@ -357,6 +357,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5276526843095863643}
+    - targetCorrespondingSourceObject: {fileID: 2352241487365438834, guid: 6e15968e460b4f147b2fdec8362a0001,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2112229236005758790}
   m_SourcePrefab: {fileID: 100100000, guid: 6e15968e460b4f147b2fdec8362a0001, type: 3}
 --- !u!4 &4437117132578149893 stripped
 Transform:
@@ -388,5 +392,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d406f64518bb9bb448d092e13c3dde17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sOKitchenObject: {fileID: 11400000, guid: 659b063c2b311cd46906ccb7788b0726, type: 2}
   CounterTopPoint: {fileID: 4437117132578149893}
+  sOKitchenObject: {fileID: 11400000, guid: 659b063c2b311cd46906ccb7788b0726, type: 2}
+--- !u!95 &2112229236005758790
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7930405946261814217}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9d2c028d8e94c4f4ca39d38660f5e86d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
