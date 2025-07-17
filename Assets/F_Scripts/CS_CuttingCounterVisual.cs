@@ -16,11 +16,11 @@ public class CS_CuttingCounterVisual : MonoBehaviour
 
     private void Start()
     {
-        //containerCounter.OnPlayerGrabbedObject += ContainerCounter_OnPlayerGrabbedObject; uncomment this~~~~~~~~~~~~~~~~~~~
+        cuttingCounter.OnCut += CuttingCounter_OnCut;
     }
 
-    private void ContainerCounter_OnPlayerGrabbedObject(object sender, System.EventArgs e)
+    private void CuttingCounter_OnCut(object sender, System.EventArgs e)
     {
-        //animator.SetTrigger(OPEN_CLOSE); uncomment this too ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        animator.SetTrigger(CUT);
     }
 }
