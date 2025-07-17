@@ -1604,6 +1604,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CuttingCounter
       objectReference: {fileID: 0}
+    - target: {fileID: 2295126045648841492, guid: e06531a026d5ec540ae6d30e0c18d770,
+        type: 3}
+      propertyPath: mode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4816889130491328442, guid: e06531a026d5ec540ae6d30e0c18d770,
         type: 3}
       propertyPath: m_AnchorMax.x
