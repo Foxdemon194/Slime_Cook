@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b3e8fd1d761b346accbcb2438fe7eb, type: 3}
+  m_Name: Patty(Cooked)
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1813405469709515010, guid: 47168b2cc8b67d741b48f56a955eb678, type: 3}
+  sprite: {fileID: 21300000, guid: 394fa39b4219b4a49a9b64ee3bf35481, type: 3}
+  objectName: Patty (Cooked)

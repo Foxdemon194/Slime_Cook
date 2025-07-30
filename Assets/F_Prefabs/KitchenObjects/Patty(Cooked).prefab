@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1813405469709515010}
+  - component: {fileID: -6126181525651242092}
   m_Layer: 0
   m_Name: Patty(Cooked)
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-6126181525651242092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762355886653785766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a2b245e8fec2141b2625e25225f372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sOKitchenObject: {fileID: 11400000, guid: dcdc9f72616598a44ae13e4fea21e5d8, type: 2}
 --- !u!1001 &4813839418232155003
 PrefabInstance:
   m_ObjectHideFlags: 0
