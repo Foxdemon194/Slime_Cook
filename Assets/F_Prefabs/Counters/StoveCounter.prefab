@@ -356,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 8173053965013680409, guid: 7e48f2e998990714cb091b68c55c58e5,
         type: 3}
       propertyPath: m_Name
-      value: CampFire (1)
+      value: Selected
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737d6a7d92d6b144ab2169b83b6bd198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseCounter: {fileID: 0}
+  baseCounter: {fileID: 1992449806028026729}
   visualGameObjectArray:
   - {fileID: 7091826276088409074}
 --- !u!1 &7091826276088409074 stripped
@@ -714,6 +714,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1992449806028026729}
   m_SourcePrefab: {fileID: 100100000, guid: 6e15968e460b4f147b2fdec8362a0001, type: 3}
+--- !u!4 &1335809045503047864 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8302790115077394622, guid: 6e15968e460b4f147b2fdec8362a0001,
+    type: 3}
+  m_PrefabInstance: {fileID: 7039355608581433350}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4689381404666762612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2352241487365438834, guid: 6e15968e460b4f147b2fdec8362a0001,
@@ -732,6 +738,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7693c5fe181995a49bf260f94d807587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CounterTopPoint: {fileID: 1335809045503047864}
+  sO_FryingRecipeArray:
+  - {fileID: 11400000, guid: 40f57ccd73c05054ebaf2169be44804b, type: 2}
 --- !u!4 &5239953307657586864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2956856577333010614, guid: 6e15968e460b4f147b2fdec8362a0001,
