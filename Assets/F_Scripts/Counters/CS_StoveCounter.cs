@@ -5,28 +5,72 @@ using static CS_CuttingCounter;
 
 public class CS_StoveCounter : CS_BaseCounter
 {
+    private enum State
+    {
+        Idle,
+        Frying,
+        Fried,
+        Burned,
+    }
+
+
     [SerializeField] private SO_FryingRecipe[] sO_FryingRecipeArray;
+    [SerializeField] private SO_BurningRecipe[] sO_BurningRecipeArray;
 
+
+    private State state;
     private float fryingTimer;
+    private SO_FryingRecipe sO_FryingRecipe;
+    private float burningTimer;
+    private SO_BurningRecipe sO_BurningRecipe;
 
+    private void Start()
+    {
+        state = State.Idle;
+    }
 
     private void Update()
     {
-        if(HasKitchenObject())
+        if (HasKitchenObject())
         {
-            fryingTimer += Time.deltaTime;
-            SO_FryingRecipe sO_FryingRecipe = GetSO_FryingRecipeWithInput(GetKitchenObject().GetSO_KitchenObject());
-            if(fryingTimer > sO_FryingRecipe.fryingTimerMax)
+            switch (state)
             {
-                // Fried
-                fryingTimer = 0;
-                Debug.Log("Fried");
-                GetKitchenObject().DestroySelf();
+                case State.Idle:
+                    break;
+                case State.Frying:
+                    fryingTimer += Time.deltaTime;
+                    if (fryingTimer > sO_FryingRecipe.fryingTimerMax)
+                    {
+                        // Fried
+                        GetKitchenObject().DestroySelf();
 
-                CS_KitchenObject.SpawnKitchenObject(sO_FryingRecipe.output, this);
+                        CS_KitchenObject.SpawnKitchenObject(sO_FryingRecipe.output, this);
+                        Debug.Log("Object Fried!");
+                        state = State.Fried;
+                        burningTimer = 0f;
+                        sO_BurningRecipe = GetSO_BurningRecipeWithInput(GetKitchenObject().GetSO_KitchenObject());
+                    }
+
+                break;
+            case State.Fried:
+                    burningTimer += Time.deltaTime;
+                    if(burningTimer > sO_BurningRecipe.burningTimerMax)
+                    {
+                        GetKitchenObject().DestroySelf();
+
+                        CS_KitchenObject.SpawnKitchenObject(sO_BurningRecipe.output, this);
+                        Debug.Log("Object Burned!");
+                        state = State.Burned;
+
+                    }
+                break;
+            case State.Burned:
+                break;
             }
 
-            Debug.Log(fryingTimer);
+
+
+            Debug.Log(state);
         }
     }
 
@@ -43,6 +87,10 @@ public class CS_StoveCounter : CS_BaseCounter
                 {
                     //Player is carrying something that can be fried
                     player.GetKitchenObject().SetKitchenObjectParent(this);
+
+                    sO_FryingRecipe = GetSO_FryingRecipeWithInput(GetKitchenObject().GetSO_KitchenObject());
+                    state = State.Frying;
+                    fryingTimer = 0f;
                 }
             }
             else
@@ -64,6 +112,8 @@ public class CS_StoveCounter : CS_BaseCounter
                 // The player is not carrying anything
                 // and the counter is occupied
                 GetKitchenObject().SetKitchenObjectParent(player);
+
+                state = State.Idle;
             }
         }
     }
@@ -95,6 +145,18 @@ public class CS_StoveCounter : CS_BaseCounter
             if (sO_FryingRecipe.input == sO_inputKitchenObject)
             {
                 return sO_FryingRecipe;
+            }
+        }
+        return null;
+    }
+
+    private SO_BurningRecipe GetSO_BurningRecipeWithInput(SO_KitchenObject sO_inputKitchenObject)
+    {
+        foreach (SO_BurningRecipe sO_BurningRecipe in sO_BurningRecipeArray)
+        {
+            if (sO_BurningRecipe.input == sO_inputKitchenObject)
+            {
+                return sO_BurningRecipe;
             }
         }
         return null;
