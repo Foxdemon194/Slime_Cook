@@ -30,6 +30,7 @@ public class CS_KitchenObject : MonoBehaviour
 
         transform.parent = kitchenObjectParent.GetKitchenObjectFollowTransform();
         transform.localPosition = Vector3.zero; // If i decide to do the hand off animation through code, i will probably have to relocate this line
+        transform.rotation = Quaternion.identity;
     }
 
     public void DestroySelf()
