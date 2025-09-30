@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bun
   m_EditorClassIdentifier: 
   prefab: {fileID: 798731446472932684, guid: 86f7a3ea8598e7c4d92a1f3020be830d, type: 3}
-  sprite: {fileID: 21300000, guid: 871badd07384e4136b8315ccbfb65596, type: 3}
+  sprite: {fileID: 21300000, guid: a052b5eee8791ba42bada559d7df8e47, type: 3}
   objectName: Bun

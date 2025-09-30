@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Patty (Burnt)
   m_EditorClassIdentifier: 
   prefab: {fileID: 5071165580568818260, guid: 7bf5b3a25dd136246b5ac6a6f2aee9b0, type: 3}
-  sprite: {fileID: 21300000, guid: 394fa39b4219b4a49a9b64ee3bf35481, type: 3}
+  sprite: {fileID: 21300000, guid: ec1fcaa23ae600f42849f6f9d1b05d1c, type: 3}
   objectName: Patty (Burnt)
